@@ -17,6 +17,7 @@ var lengthOfLongestSubstring = function (s) {
             arr.splice(0, index + 1); // Sẽ cắt bỏ một đoạn các phần tử từ mảng arr bắt đầu từ vị trí 0 (phần tử đầu tiên) đến index + 1.
         }
         arr.push(s[i]);
+        // console.log(arr);
     }
 
     if (len < arr.length) {
@@ -25,6 +26,10 @@ var lengthOfLongestSubstring = function (s) {
         return len;
     }
 };
+
+// var s = "abcabcbb";
+// var result = lengthOfLongestSubstring(s);
+// console.log(result);
 
 /**
  * Example 1:
