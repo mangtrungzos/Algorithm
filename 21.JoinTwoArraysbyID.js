@@ -30,6 +30,9 @@ var join = function(arr1, arr2) {
     return Object.values(res);
 };
 
+// Note: Theo thứ tự tăng dần thì việc sử dụng "id" để làm key, mỗi object sẽ được lưu với 1 key duy nhất
+// Note: JS chỉ cho phép các kiểu giá trị như "string", or "symbol" làm key cho các properties of object.
+
 
 // Explain: solution 1
 // [...arr1, ...arr2] - Sử dụng spread để kết hợp 2 mảng thành 1 (Spread sẽ mở rộng thành các phần tử riêng lẻ)
