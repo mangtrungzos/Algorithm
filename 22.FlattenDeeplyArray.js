@@ -56,3 +56,51 @@ var flat = function (arr, n) {
 // 3. Push : Làm phảng flatten mảng 
 // Use spread operator để làm giải mảng thành các elements riêng biêt sau khi đã được flatten
 // n - 1 : It's mean - Sẽ làm phẳng đến depth n - 1
+
+// 1. For loop : Duyệt qua từng phần tử
+// 2. If : depth > 0 && arr[i] is array
+//         if true & n > 0, sẽ gọi hàm flat() một lần nữa(đệ quy) với phần tử đó và giảm n - 1
+
+
+/* -------------------------- */
+// let arr = [[1,2], [3,[4,5]], 6];
+// n = 2
+
+// 1. Check if : false
+// 2. Cre res = []
+// 3. For : [1,2] : (0)
+//    Check if : n (2) > 0 ; Array is true
+// 4. Gọi hàm flat(arr[i], n - 1)
+//    Gọi đệ quy flat([1,2], 1)
+// 5. Quay lại check if flat  | Do gọi đệ quy
+/**
+ * if : false
+ * Cre res = []
+ * for : Duyệt arr [1, 2]
+ * check if : false
+ * push : 1 -> res = [1]
+ * push : 2 -> res = [1, 2]
+ * Sau đó quy về flat(arr, 2)
+ * res.push(...flat([1,2], 1))
+ * Ở bước này spread giải các elements trong arr res mới được tạo ra ở bước đệ quy : ...res[1,2]
+ * => res = [1, 2] (res được thiết lập ban đầu)
+ */
+
+// For : i = 1 | [3, [4, 5]]
+// 1. if - false
+// 2. Cre res = []
+// 3. for : (1) [3, [4, 5]]
+//    if : n (2) > 0 ; Array is true
+// 4. Gọi đệ quay flat([3, [4, 5]], 1)
+// 5. Quay lại check if first do đệ quy
+/**
+ * if: false
+ * Cre res mới
+ * for :  duyệt [3, [4, 5]]
+ * 3 is not array -> res = [3]
+ * i = 1 : [4, 5] is array , n > 0: 1 true
+ * => Đề quy flat([4, 5], 0): Quay lại các bước đầu
+ * n === 0 : true => Đưa [4, 5] vào res ban đầu
+ * 
+ * KQ : res = [1, 2, 3, 4, 5]
+ */
