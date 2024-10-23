@@ -55,4 +55,4 @@ var flat = function (arr, n) {
 // 2. If : depth > 0 && arr[i] is array
 // 3. Push : Làm phảng flatten mảng 
 // Use spread operator để làm giải mảng thành các elements riêng biêt sau khi đã được flatten
-// n - 1 : It's mean - các elements sẽ được đưa vào mảng với vị trí depth = n - 1
+// n - 1 : It's mean - Sẽ làm phẳng đến depth n - 1
